@@ -12,7 +12,7 @@
 
     <groupId>com.javabro</groupId>
     <artifactId>inventory-service</artifactId>
-
+    <version>0.0.1-SNAPSHOT</version>
     <name>inventory-service</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
