@@ -19,22 +19,22 @@ public class InventoryService {
     @Autowired
     ProductCategoryRepository productCategoryRepository;
 
-    public List<com.javabro.events.dto.InventoryDTO> getAllProducts() {
-        com.javabro.events.dto.InventoryDTO inventoryDTO = new com.javabro.events.dto.InventoryDTO();
+    public List<com.javabro.dto.InventoryDTO> getAllProducts() {
+        com.javabro.dto.InventoryDTO inventoryDTO = new com.javabro.dto.InventoryDTO();
         return productRepository.findAll().stream().map(product -> {
             BeanUtils.copyProperties(product, inventoryDTO);
             return inventoryDTO;
         }).collect(Collectors.toList());
     }
 
-    public com.javabro.events.dto.InventoryDTO getProductById(Long id) {
+    public com.javabro.dto.InventoryDTO getProductById(Long id) {
         Product product = productRepository.findById(id).orElseThrow(RuntimeException::new);
-        com.javabro.events.dto.InventoryDTO inventoryDTO = new com.javabro.events.dto.InventoryDTO();
+        com.javabro.dto.InventoryDTO inventoryDTO = new com.javabro.dto.InventoryDTO();
         BeanUtils.copyProperties(product, inventoryDTO);
         return inventoryDTO;
     }
 
-    public com.javabro.events.dto.InventoryDTO saveProduct(com.javabro.events.dto.InventoryDTO inventoryDTO) {
+    public com.javabro.dto.InventoryDTO saveProduct(com.javabro.dto.InventoryDTO inventoryDTO) {
         Product product = new Product();
         ProductCategory productCategory = productCategoryRepository.findById(inventoryDTO.getProductCategoryId()).orElseThrow(RuntimeException::new);
         product.setProductCategory(productCategory);
@@ -44,7 +44,7 @@ public class InventoryService {
         return inventoryDTO;
     }
 
-    public com.javabro.events.dto.InventoryDTO updateProduct(com.javabro.events.dto.InventoryDTO inventoryDTO, Long id) {
+    public com.javabro.dto.InventoryDTO updateProduct(com.javabro.dto.InventoryDTO inventoryDTO, Long id) {
         Product product = productRepository.findById(id).orElseThrow(RuntimeException::new);
         ProductCategory productCategory = productCategoryRepository.findById(inventoryDTO.getProductCategoryId()).orElseThrow(RuntimeException::new);
         BeanUtils.copyProperties(inventoryDTO, product);

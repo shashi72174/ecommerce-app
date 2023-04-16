@@ -15,22 +15,22 @@ public class InventoryController {
     private InventoryService inventoryService;
 
     @GetMapping("/products")
-    public ResponseEntity<List<com.javabro.events.dto.InventoryDTO>> getAllProducts() {
+    public ResponseEntity<List<com.javabro.dto.InventoryDTO>> getAllProducts() {
         return ResponseEntity.status(HttpStatus.OK).body(inventoryService.getAllProducts());
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<com.javabro.events.dto.InventoryDTO> getProductById(@PathVariable Long id) {
+    public ResponseEntity<com.javabro.dto.InventoryDTO> getProductById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(inventoryService.getProductById(id));
     }
 
     @PostMapping("/products")
-    public ResponseEntity<com.javabro.events.dto.InventoryDTO> saveProduct(@RequestBody com.javabro.events.dto.InventoryDTO inventoryDTO) {
+    public ResponseEntity<com.javabro.dto.InventoryDTO> saveProduct(@RequestBody com.javabro.dto.InventoryDTO inventoryDTO) {
         return ResponseEntity.status(HttpStatus.CREATED).body(inventoryService.saveProduct(inventoryDTO));
     }
 
     @PutMapping("/products/{id}")
-    public ResponseEntity<com.javabro.events.dto.InventoryDTO> updateProduct(@RequestBody com.javabro.events.dto.InventoryDTO inventoryDTO, @PathVariable Long id) {
+    public ResponseEntity<com.javabro.dto.InventoryDTO> updateProduct(@RequestBody com.javabro.dto.InventoryDTO inventoryDTO, @PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(inventoryService.updateProduct(inventoryDTO, id));
     }
 

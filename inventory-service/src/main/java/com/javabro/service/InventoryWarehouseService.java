@@ -1,6 +1,5 @@
 package com.javabro.service;
 
-import com.javabro.events.InventoryOrderLineItemEvent;
 import com.javabro.events.OrderCreatedEvent;
 import com.javabro.model.Product;
 import com.javabro.model.ProductStock;
@@ -19,7 +18,7 @@ public class InventoryWarehouseService {
 
     @Autowired
     ProductRepository productRepository;
-    public com.javabro.events.dto.ProductStockDTO updateProductStock(com.javabro.events.dto.ProductStockDTO productStockDTO) {
+    public com.javabro.dto.ProductStockDTO updateProductStock(com.javabro.dto.ProductStockDTO productStockDTO) {
         Product product = productRepository.findById(productStockDTO.getProductId()).orElseThrow(RuntimeException::new);
         Optional<ProductStock> productStockOptional = productStockRepository.findByProduct(product);
         ProductStock productStock = null;

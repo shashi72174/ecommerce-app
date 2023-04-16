@@ -14,7 +14,7 @@ public class InventoryWarehouseController {
     InventoryWarehouseService inventoryWarehouseService;
 
     @PostMapping("/updateProductStocks")
-    public com.javabro.events.dto.ProductStockDTO updateProductStocks(@RequestBody com.javabro.events.dto.ProductStockDTO productStockDTO) {
+    public com.javabro.dto.ProductStockDTO updateProductStocks(@RequestBody com.javabro.dto.ProductStockDTO productStockDTO) {
         return inventoryWarehouseService.updateProductStock(productStockDTO);
     }
 }
