@@ -13,7 +13,17 @@ spring:
     hibernate:
       ddl-auto: update
 
-
   kafka:
     bootstrap-servers:
       - localhost:9092
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: inventory-orderlineitem-event-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.javabro.events

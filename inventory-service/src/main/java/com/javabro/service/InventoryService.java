@@ -1,6 +1,5 @@
 package com.javabro.service;
 
-import com.javabro.dto.InventoryDTO;
 import com.javabro.model.Product;
 import com.javabro.model.ProductCategory;
 import com.javabro.repository.ProductCategoryRepository;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,22 +19,22 @@ public class InventoryService {
     @Autowired
     ProductCategoryRepository productCategoryRepository;
 
-    public List<InventoryDTO> getAllProducts() {
-        InventoryDTO inventoryDTO = new InventoryDTO();
+    public List<com.javabro.events.dto.InventoryDTO> getAllProducts() {
+        com.javabro.events.dto.InventoryDTO inventoryDTO = new com.javabro.events.dto.InventoryDTO();
         return productRepository.findAll().stream().map(product -> {
             BeanUtils.copyProperties(product, inventoryDTO);
             return inventoryDTO;
         }).collect(Collectors.toList());
     }
 
-    public InventoryDTO getProductById(Long id) {
+    public com.javabro.events.dto.InventoryDTO getProductById(Long id) {
         Product product = productRepository.findById(id).orElseThrow(RuntimeException::new);
-        InventoryDTO inventoryDTO = new InventoryDTO();
+        com.javabro.events.dto.InventoryDTO inventoryDTO = new com.javabro.events.dto.InventoryDTO();
         BeanUtils.copyProperties(product, inventoryDTO);
         return inventoryDTO;
     }
 
-    public InventoryDTO saveProduct(InventoryDTO inventoryDTO) {
+    public com.javabro.events.dto.InventoryDTO saveProduct(com.javabro.events.dto.InventoryDTO inventoryDTO) {
         Product product = new Product();
         ProductCategory productCategory = productCategoryRepository.findById(inventoryDTO.getProductCategoryId()).orElseThrow(RuntimeException::new);
         product.setProductCategory(productCategory);
@@ -46,7 +44,7 @@ public class InventoryService {
         return inventoryDTO;
     }
 
-    public InventoryDTO updateProduct(InventoryDTO inventoryDTO, Long id) {
+    public com.javabro.events.dto.InventoryDTO updateProduct(com.javabro.events.dto.InventoryDTO inventoryDTO, Long id) {
         Product product = productRepository.findById(id).orElseThrow(RuntimeException::new);
         ProductCategory productCategory = productCategoryRepository.findById(inventoryDTO.getProductCategoryId()).orElseThrow(RuntimeException::new);
         BeanUtils.copyProperties(inventoryDTO, product);

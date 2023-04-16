@@ -1,6 +1,5 @@
 package com.javabro.controllers;
 
-import com.javabro.dto.ProductStockDTO;
 import com.javabro.service.InventoryWarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +14,7 @@ public class InventoryWarehouseController {
     InventoryWarehouseService inventoryWarehouseService;
 
     @PostMapping("/updateProductStocks")
-    public ProductStockDTO updateProductStocks(@RequestBody ProductStockDTO productStockDTO) {
+    public com.javabro.events.dto.ProductStockDTO updateProductStocks(@RequestBody com.javabro.events.dto.ProductStockDTO productStockDTO) {
         return inventoryWarehouseService.updateProductStock(productStockDTO);
     }
 }

@@ -11,7 +11,9 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDTO {
+    private Long id;
     private Long userId;
     private Set<OrderLineItemDTO> orderLineItems;
     private Date orderedDate;
+    private String orderStatus;
 }

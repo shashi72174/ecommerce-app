@@ -13,6 +13,8 @@
     <module>inventory-service</module>
     <module>shipment-service</module>
     <module>commons</module>
+      <module>user-service</module>
+    <module>payment-service</module>
   </modules>
 
   <name>ecommerce-app</name>
