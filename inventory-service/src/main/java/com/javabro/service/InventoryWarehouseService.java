@@ -6,6 +6,7 @@ import com.javabro.model.ProductStock;
 import com.javabro.repository.ProductRepository;
 import com.javabro.repository.ProductStockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -33,6 +34,7 @@ public class InventoryWarehouseService {
         return productStockDTO;
     }
 
+    @KafkaListener(topics = "order-inventory-topic", groupId = "order-inventory-group")
     public void consumeOrderInventoryCheck(OrderCreatedEvent orderCreatedEvent){
         double sum = 0d;
         orderCreatedEvent.getOrderLineItems().stream().map(orderLineItemDTO -> {
