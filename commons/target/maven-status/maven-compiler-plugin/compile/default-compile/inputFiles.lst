@@ -1,0 +1,9 @@
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\events\OrderPaymentEvent.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\events\OrderShipmentEvent.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\dto\InventoryDTO.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\dto\OrderLineItemDTO.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\dto\OrderDTO.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\events\InventoryOrderLineItemEvent.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\dto\ProductStockDTO.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\events\OrderCreatedEvent.java
+C:\Users\user\IdeaProjects\ecommerce-app\commons\src\main\java\com\javabro\events\PaymentProcessedEvent.java

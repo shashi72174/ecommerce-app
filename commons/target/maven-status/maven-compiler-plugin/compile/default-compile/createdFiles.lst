@@ -1,0 +1,10 @@
+com\javabro\events\OrderPaymentEvent.class
+com\javabro\dto\InventoryDTO$InventoryDTOBuilder.class
+com\javabro\events\InventoryOrderLineItemEvent.class
+com\javabro\events\PaymentProcessedEvent.class
+com\javabro\dto\ProductStockDTO.class
+com\javabro\dto\OrderDTO.class
+com\javabro\dto\InventoryDTO.class
+com\javabro\events\OrderCreatedEvent.class
+com\javabro\dto\OrderLineItemDTO.class
+com\javabro\events\OrderShipmentEvent.class
