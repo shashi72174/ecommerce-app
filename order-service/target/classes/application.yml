@@ -14,8 +14,7 @@ spring:
       ddl-auto: update
 
   kafka:
-    bootstrap-servers:
-      - localhost:9092
+    bootstrap-servers: localhost:9092
     consumer:
       bootstrap-servers: localhost:9092
       group-id: inventory-orderlineitem-event-group

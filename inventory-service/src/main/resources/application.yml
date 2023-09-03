@@ -24,3 +24,6 @@ spring:
           json:
             trusted:
               packages: com.javabro.events
+springdoc:
+  api-docs:
+    path: /api-docs
