@@ -57,6 +57,7 @@ public class UserCartService {
             userProductCartDTO.setQuantity(userCart.getQuantity());
             userProductCartDTO.setProductName(inventoryDTO.getProductName());
             userProductCartDTO.setProductDescription(inventoryDTO.getProductDescription());
+            userProductCartDTO.setProductPrice(inventoryDTO.getProductPrice());
             return userProductCartDTO;
         }).collect(Collectors.toList());
     }
