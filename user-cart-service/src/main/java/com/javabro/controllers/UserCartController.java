@@ -1,6 +1,7 @@
 package com.javabro.controllers;
 
 import com.javabro.dto.UserCartDTO;
+import com.javabro.dto.UserProductCartDTO;
 import com.javabro.model.UserCart;
 import com.javabro.service.UserCartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,8 @@ public class UserCartController {
         userCartService.deleteProductFromCart(id);
     }
 
-    @GetMapping("/getProductsInCart")
-    public List<UserCartDTO> getProductsInCart(@PathVariable("userId") Long userId) {
+    @GetMapping("/getProductsInCart/{userId}")
+    public List<UserProductCartDTO> getProductsInCart(@PathVariable("userId") Long userId) {
         return userCartService.getProductsInCart(userId);
     }
 
